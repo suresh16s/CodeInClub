@@ -1,0 +1,187 @@
+Q.Q.Write a program to generate a birth month of 50 individual between the year 92 & 93 .Find all the individual having birthday in the same month.store it to finally print.
+
+
+#!/bin/bash 
+declare -A personDict
+Jan=0 Feb=0 March=0 April=0 May=0 June=0 July=0 Aug=0 Sept=0 Oct=0 Nov=0 Dec=0
+
+for((i=1;i<=50;i++))
+do
+        randomYear=$((RANDOM%2))
+        randomMonth=$((RANDOM%12 + 1))
+        if [ $randomYear -eq 0 ]
+        then
+                randomYear=92
+        else
+                randomYear=93
+        fi
+
+        personDict["person_$i"]=$randomMonth
+done
+echo ${personDict[@]}
+for i in ${!personDict[@]}
+do
+   echo "$i  : ${personDict[$i]}"
+done | sort -k3 -n
+
+echo "persons having same month"
+for j in ${!personDict[@]}
+do
+        case ${personDict[$j]} in
+                1)Jan=$(($Jan+1))
+                        echo "$j : ${personDict[$j]}";;
+                2)Feb=$(($Feb+1))
+                        echo "$j : ${personDict[$j]}";;
+                3)March=$(($March+1))
+                        echo "$j : ${personDict[$j]}";;
+                4)April=$(($April+1))
+                        echo "$j : ${personDict[$j]}";;
+                5)May=$(($May+1))
+                        echo "$j : ${personDict[$j]}";;
+                6)June=$(($June+1))
+                        echo "$j : ${personDict[$j]}";;
+                7)July=$(($July+1))
+                        echo "$j : ${personDict[$j]}";;
+                8)Aug=$(($Aug+1))
+                        echo "$j : ${personDict[$j]}";;
+                9)Sept=$(($Sept+1))
+                        echo "$j : ${personDict[$j]}";;
+			10)Oct=$(($Oct+1))
+                        echo "$j : ${personDict[$j]}";;
+                11)Nov=$(($Nov+1))
+                        echo "$j : ${personDict[$j]}";;
+                12)Dec=$(($Dec+1))
+                        echo "$j : ${personDict[$j]}";;
+        esac
+done
+
+echo "number of person"
+echo "Month_1 : $Jan"
+echo "Month_2 : $Feb"
+echo "Month_3 : $March"
+echo "Month_4 : $April"
+echo "Month_5 : $May"
+echo "Month_6 : $June"
+echo "Month_7 : $July"
+echo "Month_8 : $Aug"
+echo "Month_9 : $Sept"
+echo "Month_10 : $Oct"
+echo "Month_11 : $Nov"
+echo "Month_12 : $Dec"
+
+11 4 10 12 7 7 10 12 11 12 12 11 1 11 1 1 12 5 6 5 9 9 3 8 3 9 3 3 7 7 6 8 4 5 7 1 11 8 7 4 10 9 2 1 5 1 6 4 11 1
+person_10  : 1
+person_14  : 1
+person_15  : 1
+person_34  : 1
+person_36  : 1
+person_37  : 1
+person_8  : 1
+person_2  : 2
+person_41  : 3
+person_43  : 3
+person_44  : 3
+person_45  : 3
+person_16  : 4
+person_19  : 4
+person_28  : 4
+person_7  : 4
+person_13  : 5
+person_1  : 5
+person_31  : 5
+person_33  : 5
+person_18  : 6
+person_32  : 6
+person_50  : 6
+person_24  : 7
+person_25  : 7
+person_46  : 7
+person_4  : 7
+person_47  : 7
+person_6  : 7
+person_11  : 8
+person_12  : 8
+person_40  : 8
+person_17  : 9
+person_42  : 9
+person_48  : 9
+person_49  : 9
+person_23  : 10
+person_27  : 10
+person_3  : 10
+person_21  : 11
+person_29  : 11
+person_35  : 11
+person_39  : 11
+person_5  : 11
+person_9  : 11
+person_20  : 12
+person_22  : 12
+person_26  : 12
+person_30  : 12
+person_38  : 12
+persons having same month
+person_29 : 11
+person_28 : 4
+person_27 : 10
+person_26 : 12
+person_25 : 7
+person_24 : 7
+person_23 : 10
+person_22 : 12
+person_21 : 11
+person_20 : 12
+person_38 : 12
+person_39 : 11
+person_34 : 1
+person_35 : 11
+person_36 : 1
+person_37 : 1
+person_30 : 12
+person_31 : 5
+person_32 : 6
+person_33 : 5
+person_49 : 9
+person_48 : 9
+person_41 : 3
+person_40 : 8
+person_43 : 3
+person_42 : 9
+person_45 : 3
+person_44 : 3
+person_47 : 7
+person_46 : 7
+person_50 : 6
+person_12 : 8
+person_7 : 4
+person_13 : 5
+person_6 : 7
+person_10 : 1
+person_5 : 11
+person_11 : 8
+person_4 : 7
+person_16 : 4
+person_3 : 10
+person_17 : 9
+person_2 : 2
+person_14 : 1
+person_1 : 5
+person_15 : 1
+person_18 : 6
+person_19 : 4
+person_9 : 11
+person_8 : 1
+number of person
+Month_1 : 7
+Month_2 : 1
+Month_3 : 4
+Month_4 : 4
+Month_5 : 4
+Month_6 : 3
+Month_7 : 6
+Month_8 : 3
+Month_9 : 4
+Month_10 : 3
+Month_11 : 6
+Month_12 : 5
+

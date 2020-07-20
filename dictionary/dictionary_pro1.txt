@@ -1,0 +1,373 @@
+Q.Write a program in the following steps
+	a.Roll a die and find the number between 1 to 6.
+	b.Repeat the die roll and find the result each time.
+	c.Store the result in a dictionary.
+	d.Repeat till any one of the number has reached 10 times.
+	e.Find the number that reached maximum times and one that was for minimum times.
+	
+
+#!/bin/bash -x
+
+#Creating dictionary
+for ((i=1 ; i<=6 ; i++))
+do
+        dice[$i]=0;
+done
+
+#printing dictionary
+echo ${dice[@]}
+
+while true 
+do
+        random=$(((RANDOM % 6) + 1))
+        dice[$random]=$((dice[$random] + 1))
+        if [ ${dice[$random]} -eq 10 ]
+        then
+                break
+        fi
+done
+
+#Dictionary Elements max
+for ((i=1 ; i<=6 ; i++))
+do
+        echo dice[$i]":"${dice[$i]}
+done
+
+
+for ((i=1 ; i<=6 ; i++))
+do
+        if [ ${dice[$i]} -eq 10 ]
+        then
+                echo "Maximum is $i"
+        fi
+#!/bin/bash -x
+
+#Creating dictionary
+for ((i=1 ; i<=6 ; i++))
+do
+        dice[$i]=0;
+done
+
+#printing dictionary
+echo ${dice[@]}
+
+while true 
+do
+        random=$(((RANDOM % 6) + 1))
+        dice[$random]=$((dice[$random] + 1))
+        if [ ${dice[$random]} -eq 10 ]
+        then
+                break
+        fi
+done
+
+#Dictionary Elements max
+for ((i=1 ; i<=6 ; i++))
+do
+        echo dice[$i]":"${dice[$i]}
+done
+
+
+for ((i=1 ; i<=6 ; i++))
+do
+        if [ ${dice[$i]} -eq 10 ]
+        then
+                echo "Maximum is $i"
+        fi
+n=10
+for ((i=1 ; i<=6 ; i++))
+do
+        if [ ${dice[$i]} -lt $n ]
+        then
+                min=$i
+                n=${dice[$i]}
+        fi
+done
+echo "Minimum is $min"
+
+Output:
+
+0 0 0 0 0 0
+dice[1]:5
+dice[2]:10
+dice[3]:5
+dice[4]:2
+dice[5]:7
+dice[6]:6
+Maximum is 2
+Minimum is 4
+
+
+OR
+
++ (( i=1  ))
++ (( i<=6  ))
++ dice[$i]=0
++ (( i++ ))
++ (( i<=6  ))
++ dice[$i]=0
++ (( i++ ))
++ (( i<=6  ))
++ dice[$i]=0
++ (( i++ ))
++ (( i<=6  ))
++ dice[$i]=0
++ (( i++ ))
++ (( i<=6  ))
++ dice[$i]=0
++ (( i++ ))
++ (( i<=6  ))
++ dice[$i]=0
++ (( i++ ))
++ (( i<=6  ))
++ echo 0 0 0 0 0 0
+0 0 0 0 0 0
++ true
++ random=6
++ dice[$random]=1
++ '[' 1 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=1
++ '[' 1 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=1
++ '[' 1 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=1
++ '[' 1 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=2
++ '[' 2 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=1
++ '[' 1 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=2
++ '[' 2 -eq 10 ']'
++ true
++ random=5
++ dice[$random]=1
++ '[' 1 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=2
++ '[' 2 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=3
++ '[' 3 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=2
++ '[' 2 -eq 10 ']'
++ true
++ random=6
++ dice[$random]=2
++ '[' 2 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=3
++ '[' 3 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=3
++ '[' 3 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=3
++ '[' 3 -eq 10 ']'
++ true
++ random=5
++ dice[$random]=2
++ '[' 2 -eq 10 ']'
++ true
++ random=6
++ dice[$random]=3
++ '[' 3 -eq 10 ']'
++ true
++ random=6
++ dice[$random]=4
++ '[' 4 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=4
++ '[' 4 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=4
++ '[' 4 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=5
++ '[' 5 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=5
++ '[' 5 -eq 10 ']'
++ true
++ random=6
++ dice[$random]=5
++ '[' 5 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=4
++ '[' 4 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=5
++ '[' 5 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=4
++ '[' 4 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=5
++ '[' 5 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=6
++ '[' 6 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=7
++ '[' 7 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=6
++ '[' 6 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=6
++ '[' 6 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=8
++ '[' 8 -eq 10 ']'
++ true
++ random=4
++ dice[$random]=9
++ '[' 9 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=6
++ '[' 6 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=7
++ '[' 7 -eq 10 ']'
++ true
++ random=6
++ dice[$random]=6
++ '[' 6 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=8
++ '[' 8 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=9
++ '[' 9 -eq 10 ']'
++ true
++ random=5
++ dice[$random]=3
++ '[' 3 -eq 10 ']'
++ true
++ random=1
++ dice[$random]=7
++ '[' 7 -eq 10 ']'
++ true
++ random=5
++ dice[$random]=4
++ '[' 4 -eq 10 ']'
++ true
++ random=2
++ dice[$random]=7
++ '[' 7 -eq 10 ']'
++ true
++ random=3
++ dice[$random]=10
++ '[' 10 -eq 10 ']'
++ break
++ (( i=1  ))
++ (( i<=6  ))
++ echo 'dice[1]:7'
+dice[1]:7
++ (( i++ ))
++ (( i<=6  ))
++ echo 'dice[2]:7'
+dice[2]:7
++ (( i++ ))
++ (( i<=6  ))
++ echo 'dice[3]:10'
+dice[3]:10
++ (( i++ ))
++ (( i<=6  ))
++ echo 'dice[4]:9'
+dice[4]:9
++ (( i++ ))
++ (( i<=6  ))
++ echo 'dice[5]:4'
+dice[5]:4
++ (( i++ ))
++ (( i<=6  ))
++ echo 'dice[6]:6'
+dice[6]:6
++ (( i++ ))
++ (( i<=6  ))
++ (( i=1  ))
++ (( i<=6  ))
++ '[' 7 -eq 10 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 7 -eq 10 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 10 -eq 10 ']'
++ echo 'Maximum is 3'
+Maximum is 3
++ (( i++ ))
++ (( i<=6  ))
++ '[' 9 -eq 10 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 4 -eq 10 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 6 -eq 10 ']'
++ (( i++ ))
++ (( i<=6  ))
++ n=10
++ (( i=1  ))
++ (( i<=6  ))
++ '[' 7 -lt 10 ']'
++ min=1
++ n=7
++ (( i++ ))
++ (( i<=6  ))
++ '[' 7 -lt 7 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 10 -lt 7 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 9 -lt 7 ']'
++ (( i++ ))
++ (( i<=6  ))
++ '[' 4 -lt 7 ']'
++ min=5
++ n=4
++ (( i++ ))
++ (( i<=6  ))
++ '[' 6 -lt 4 ']'
++ (( i++ ))
++ (( i<=6  ))
++ echo 'Minimum is 5'
+Minimum is 5
+
